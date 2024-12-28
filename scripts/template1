@@ -1,0 +1,27 @@
+#!/bin/bash
+#Purpose: Testing out shell scripting
+#Version: 2.0
+#Created Date: $date
+#Modified Date: $date
+
+echo -e "Please enter the file name: \c"
+read -r filename;
+
+filepath=~/scripts/$file.sh
+
+cat <<WRITING  >"$filepath"
+#!/bin/bash
+#Purpose: Testing out shell scripting
+#Version: 2.0
+#Created Date: $date
+#Modified Date: $date
+echo "Enter any text here:"
+read input 
+echo "\$input"
+
+WRITING
+
+chmod -x "$filepath"
+
+echo "Template created at $filepath"
+echo "Run it using: $filepath"

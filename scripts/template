@@ -1,0 +1,33 @@
+#!/bin/bash
+# Purpose: Template for creating bash scripts
+# Version: 1.0
+# Created Date: $(date)
+# Modified Date: $(date)
+
+echo -e "Enter the filename to create (without extension): \c"
+read -r file
+
+# Create file with the template
+filepath=~/scripts/$file.sh
+
+touch "$filepath"   # Create the script file
+
+cat <<EOF >"$filepath"
+#!/bin/bash
+# Purpose: Sample Bash Script
+# Version: 1.0
+# Created Date: $(date)
+# Modified Date: $(date)
+
+echo "Enter your input: "
+read input
+echo "You entered: \$input"
+
+# End of Script
+EOF
+
+chmod +x "$filepath" # Make the file executable
+
+echo "Template created at $filepath"
+echo "Run it using: $filepath"
+
